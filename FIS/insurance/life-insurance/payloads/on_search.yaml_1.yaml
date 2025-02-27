@@ -1,0 +1,144 @@
+context:
+  domain: '{{domain}}'
+  location:
+    country:
+      code: IND-1
+    city:
+      code: '*'
+  version: 2.0.0
+  action: on_search
+  bap_id: fis.test.bap.io
+  bap_uri: '{{bap_uri}}'
+  bpp_id: fis.test.bpp.io
+  bpp_uri: '{{bpp_uri}}'
+  transaction_id: '{{transaction_id}}'
+  message_id: '{{msg_id}}'
+  ttl: PT24H
+  timestamp: '{{timestamp}}'
+message:
+  catalog:
+    descriptor:
+      name: ABC Insurance Ltd
+    providers:
+      - id: PROVIDER_ID
+        descriptor:
+          images:
+            - url: >-
+                https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
+              size_type: sm
+          name: ICICI Bank
+          short_desc: ICICI Bank Ltd
+          long_desc: ICICI Bank Ltd, India.
+        categories:
+          - id: C1
+            descriptor:
+              code: LIFE_INSURANCE
+              name: Life Insurance
+          - id: C2
+            descriptor:
+              code: ENDOWMENT_POLICY
+              name: Endowment Policy
+        items:
+          - id: LIFE_INSURANCE_ITEM_ID
+            descriptor:
+              code: LIFE_INSURANCE
+              name: Life  Insurance
+            category_ids:
+              - C1
+            matched: true
+            recommended: true
+            xinput:
+              head:
+                descriptor:
+                  name: BASIC_DETAILS
+                index:
+                  min: 0
+                  cur: 0
+                  max: 0
+                headings:
+                  - BASIC_DETAILS
+              form:
+                id: BASIC_DETAILS_FORM_ID
+                mime_type: text/html
+                url: '{{form_url}}form/life-insurance/basic-details'
+                resubmit: false
+                multiple_submissions: false
+              required: true
+            add_ons:
+              - id: A1
+                quantity:
+                  available:
+                    count: 1
+                descriptor:
+                  name: No Claim Bonus
+                  code: NO_CLAIM_BONUS
+                price:
+                  value: '100'
+                  currency: INR
+        tags:
+          - descriptor:
+              code: CONTACT_INFO
+              name: Contact Info
+            list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: ICICI
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: lifeline@iciciprulife.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: 1860 266 7766
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: >-
+                  https://buy.iciciprulife.com/buy/GrievanceRedStep.htm?execution=e1s1
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: 1800 1080
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: customer.care@icicibank.com
+          - descriptor:
+              code: LSP_INFO
+              name: Lsp Info
+            list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: ICICI_LSP
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: lsp@iciciprulife.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: 1860 266 7766
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: >-
+                  One Indiabulls centre, Tower 1, 18th Floor Jupiter mill
+                  compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai
+                  400013
+    tags:
+      - display: false
+        descriptor:
+          name: BPP Terms of Engagement
+          code: BPP_TERMS
+        list:
+          - descriptor:
+              name: Static Terms (Transaction Level)
+              code: STATIC_TERMS
+            value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+          - descriptor:
+              name: Offline Contract
+              code: OFFLINE_CONTRACT
+            value: 'true'

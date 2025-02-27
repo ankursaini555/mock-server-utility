@@ -611,4 +611,118 @@ mutual-funds:
     $ref: ""
   delay: 300
   payload:
-    $ref: "./investment/mutual-funds/template/on_search.yaml"      
+    $ref: "./investment/mutual-funds/template/on_search.yaml"     
+
+
+#life insurance
+life-insurance-1:
+  condition:
+      operation:
+        type: AND
+        input:
+          value:
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.provider"
+                  - "undefined"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.category.descriptor.code"
+                  - "LIFE_INSURANCE"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.items"
+                  - "undefined"
+  callback: "on_search"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_search.yaml_1.yaml"      
+
+#life insurance
+life-insurance-2:
+  condition:
+      operation:
+        type: AND
+        input:
+          value:
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.items"
+                  - "undefined"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.category.descriptor.code"
+                  - "LIFE_INSURANCE"
+  callback: "on_search"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_search.yaml_2.yaml"      
+
+#life insurance
+life-insurance-3:
+  condition:
+      operation:
+        type: AND
+        input:
+          value:
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.provider"
+                  - "undefined"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.category.descriptor.code"
+                  - "LIFE_INSURANCE"
+  callback: "on_search"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_search.yaml_3.yaml"      
+

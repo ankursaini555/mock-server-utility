@@ -1,0 +1,60 @@
+|
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Redirection</title>
+</head>
+<body>
+    <h2>Form Redirection</h2>
+    <form id="ekycForm">
+        <p>This will be redirected to a different HTML page. Please click submit the form to get a submission ID for the next call.</p>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("ekycForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            
+            let base64payload = new URLSearchParams(window.location.search).get('payload');
+            if (!base64payload) {
+                console.error("No payload found in URL.");
+                document.getElementById("textmsg").innerHTML = "Error: No payload provided.";
+                return;
+            }
+
+            let data;
+            try {
+                data = JSON.parse(atob(base64payload));
+                data.context.action="status"
+            } catch (err) {
+                console.error("Invalid base64 payload:", err);
+                document.getElementById("textmsg").innerHTML = "Error: Invalid payload.";
+                return;
+            }
+
+            try {
+                const response = await fetch("/mock/form/life-insurance/submission/ekyc-dtls", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const responseData = await response.json();
+                console.log("Response Data:", responseData);
+                document.getElementById("textmsg").innerHTML = "Form has been submitted successfully.";
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("textmsg").innerHTML = "Error submitting form.";
+            }
+        });
+    </script>
+
+    <div id="textmsg"></div>
+</body>
+</html>

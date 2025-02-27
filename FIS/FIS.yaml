@@ -18,7 +18,7 @@ log:
 path:
   search:
     schema:
-      $ref: ./FIS/default/schema/search.yaml
+      type: object
     callbacks:
       $ref: ./FIS/search.yaml
   # on_search:
@@ -27,8 +27,10 @@ path:
   #   callbacks:
   #     $ref: ./FIS/default/on_search.yaml
   select:
+    # schema:
+    #   $ref: ./FIS/default/schema/select.yaml
     schema:
-      $ref: ./FIS/default/schema/select.yaml
+      type: object
     callbacks:
       $ref: ./FIS/select.yaml
   # on_select:
@@ -38,7 +40,9 @@ path:
   #     $ref: ./FIS/default/on_select.yaml
   init:
     schema:
-      $ref: ./FIS/default/schema/init.yaml
+      type: object
+    # schema:
+    #   $ref: ./FIS/default/schema/init.yaml
     callbacks:
       $ref: ./FIS/init.yaml
   # on_init:
@@ -348,3 +352,29 @@ path:
   form_submission_fund-agreement:
     callbacks:
       $ref: ./FIS/investment/mutual-funds/forms/init-submission-mutual-fund-agreement.yaml
+
+  #life insurance forms
+  form_life-insurance_basic-details:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_basic-details.yaml
+  form_life-insurance_submission_basic-details:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_submission_basic-details.yaml
+  form_life-insurance_ekyc-dtls:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_ekyc-dtls.yaml
+  form_life-insurance_submission_ekyc-dtls:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_submission_ekyc-dtls.yaml
+  form_life-insurance_additional-dtls:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_additional-dtls.yaml
+  form_life-insurance_submission_additional-dtls:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_submission_additional-dtls.yaml
+  form_life-insurance_medical-appt-booking:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_medical-appt-booking.yaml
+  form_life-insurance_submission_medical-appt-booking:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/form_submission_medical-appt-booking.yaml

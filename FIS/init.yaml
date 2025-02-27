@@ -694,4 +694,136 @@ mutual-funds-1:
     $ref: ""
   delay: 300
   payload:
-    $ref: "./investment/mutual-funds/template/on_init.yaml"         
+    $ref: "./investment/mutual-funds/template/on_init.yaml"
+
+life-insurance_1:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.parent_item_id"
+                  - "LIFE_INSURANCE_ITEM_ID"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.xinput"
+                  - "undefined"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_init.yaml_1.yaml"
+
+life-insurance_2:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.parent_item_id"
+                  - "LIFE_INSURANCE_ITEM_ID"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.xinput.form_response.submission_id"
+                  - "EKYC_FORM_ID_SUBMISSION_ID"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_init.yaml_2.yaml"
+
+life-insurance_3:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.parent_item_id"
+                  - "LIFE_INSURANCE_ITEM_ID"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.xinput.form_response.submission_id"
+                  - "ADDITIONAL_DETAILS_FORM_ID_SUBMISSION_ID"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_init.yaml_3.yaml"
+
+life-insurance_4:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.parent_item_id"
+                  - "LIFE_INSURANCE_ITEM_ID"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.items.0.xinput.form_response.submission_id"
+                  - "MEDICAL_CHECKUP_APPOINTMENT_FORM_ID_SUBMISSION_ID"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/on_init.yaml_4.yaml"

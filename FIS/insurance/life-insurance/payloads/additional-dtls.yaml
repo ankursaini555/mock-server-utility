@@ -1,0 +1,186 @@
+|
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Details Form</title>
+</head>
+
+<body>
+
+    <h1>Additional Details Form</h1>
+    <form id="additionalDetailsForm" action="/mock/form/life-insurance/submission/additional-dtls" method="POST">
+        <h2>Questionnaire</h2>
+
+        <label>1. Have you remained absent from place of work on grounds of health for a continuous period of more than
+            10 days for reasons other than pregnancy, minor fracture, cold or flu?</label><br>
+        <br>
+        <input type="radio" name="q1" value="yes" > Yes
+        <input type="radio" name="q1" value="no"> No<br><br>
+
+        <label>2. In the past five years, have you ever undergone any surgical operation at a hospital or clinic or
+            undergone any investigations with other than normal or negative results (including X-rays, ECG, blood tests,
+            biopsies etc.)?</label><br> <br>
+        <input type="radio" name="q2" value="yes" > Yes
+        <input type="radio" name="q2" value="no"> No<br><br>
+
+        <label>3. Have you ever sought advice or suffered from any of the following?</label><br>
+        <br>
+        <div>
+            <label>(a) Chest pain, low or high blood pressure, high cholesterol, heart attack, heart murmur or other
+                heart disorders?</label><br>
+            <br>
+            <input type="radio" name="q3a" value="yes" > Yes
+            <input type="radio" name="q3a" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(b) Asthma, chronic cough, pneumonia, shortness of breath, tuberculosis (TB) or other respiratory or
+                lung disorders?</label><br>
+            <br>
+            <input type="radio" name="q3b" value="yes" > Yes
+            <input type="radio" name="q3b" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(c) Diabetes / elevated blood sugar or sugar in the urine?</label><br>
+            <br>
+            <input type="radio" name="q3c" value="yes" > Yes
+            <input type="radio" name="q3c" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(d) Ulcer, colitis, chronic diarrhoea, hepatitis or jaundice or other liver or any gastrointestinal
+                disorders?</label><br>
+            <br>
+            <input type="radio" name="q3d" value="yes" > Yes
+            <input type="radio" name="q3d" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(e) Cancer, tumour, abnormal growth, cyst, enlarged glands or enlarged lymph nodes?</label><br>
+            <br>
+            <input type="radio" name="q3e" value="yes" > Yes
+            <input type="radio" name="q3e" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(f) Dizziness / fainting spells, epilepsy, paralysis, stroke, mental/ psychiatric disorder or any
+                other neurological disorder?</label><br>
+            <br>
+            <input type="radio" name="q3f" value="yes" > Yes
+            <input type="radio" name="q3f" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(g) Kidney, urinary, bladder, reproductive organ, prostate or any genitourinary
+                disorders?</label><br>
+            <br>
+            <input type="radio" name="q3g" value="yes" > Yes
+            <input type="radio" name="q3g" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(h) Arthritis, gout or joint pain, muscle disorder, bone fracture or any other musculoskeletal
+                disorders?</label><br>
+            <br>
+            <input type="radio" name="q3h" value="yes" > Yes
+            <input type="radio" name="q3h" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(i) Disorder of eyes (such as cataract, glaucoma etc.) or throat or ears?</label><br>
+            <br>
+            <input type="radio" name="q3i" value="yes" > Yes
+            <input type="radio" name="q3i" value="no"> No<br><br>
+        </div>
+        <div>
+            <label>(j) Any other illness, surgery, ailment or injury which is specifically not mentioned
+                above?</label><br>
+            <br>
+            <input type="radio" name="q3j" value="yes" > Yes
+            <input type="radio" name="q3j" value="no"> No<br><br>
+        </div>
+
+        <label>4. Do you have any congenital anomaly/disorder, physical defects, impairment, deformities and/or any
+            condition affecting mobility, sight and/or hearing?</label><br>
+        <br>
+        <input type="radio" name="q4" value="yes" > Yes
+        <input type="radio" name="q4" value="no"> No<br><br>
+
+        <label>5. Have you or your spouse received any medical advice, testing or treatment for any sexually transmitted
+            disease or Hepatitis B or C?</label><br>
+        <br>
+        <input type="radio" name="q5" value="yes" > Yes
+        <input type="radio" name="q5" value="no"> No<br><br>
+
+        <label>6. Do you have any health symptoms or complaints for which a physician has not been consulted or
+            treatment received? (persistent fever, unexplained weight loss, loss of appetite, pain, swelling
+            etc.)</label><br>
+        <br>
+        <input type="radio" name="q6" value="yes" > Yes
+        <input type="radio" name="q6" value="no"> No<br><br>
+
+        <label>7. For female lives only: Are you pregnant? If Yes, number of weeks (Numeric)</label><br>
+        <br>
+        <input type="radio" name="q7" value="yes"> Yes
+        <input type="radio" name="q7" value="no"> No
+        <input type="number" name="pregnancyWeeks" placeholder="Number of weeks" min="1"><br><br>
+
+        <h2>Lifestyle Questions</h2>
+
+        <label>1. Do you intend to live or travel outside India for a period of more than 180 days? If Yes, submit
+            appropriate questionnaire.</label><br>
+        <br>
+        <input type="radio" name="lifestyleQ1" value="yes"> Yes
+        <input type="radio" name="lifestyleQ1" value="no"> No<br><br>
+
+        <label>2. Are you involved or do you intend to involve in any hazardous occupation or avocation? If Yes, submit
+            appropriate questionnaire.</label><br>
+        <br>
+        <input type="radio" name="lifestyleQ2" value="yes"> Yes
+        <input type="radio" name="lifestyleQ2" value="no"> No<br><br>
+
+        <label>3. Do you consume or have you ever consumed any narcotic substance? If Yes, give details.</label><br>
+        <br>
+        <input type="radio" name="lifestyleQ3" value="yes"> Yes
+        <input type="radio" name="lifestyleQ3" value="no"> No
+        <textarea name="narcoticDetails" placeholder="Details if Yes"></textarea><br><br>
+
+        <label>4. Do you consume cigarettes/bidis/cigars or used any other tobacco/nicotine products in any form? If
+            Yes, when was it last consumed?</label><br>
+        <br>
+        <input type="radio" name="lifestyleQ4" value="yes"> Yes
+        <input type="radio" name="lifestyleQ4" value="no"> No
+        <input type="text" name="tobaccoLastConsumed" placeholder="When was it last consumed"><br><br>
+
+        <label>5. Has any of your parents, brothers or sisters been diagnosed with / suffering from / have died due to
+            any hereditary or chronic disorder, heart ailment, stroke, high blood pressure/Hypertension, Diabetes,
+            mellitus/High blood sugar, cancer, kidney disease, paralysis, other disease not stated above prior to age
+            60? If Yes, specify details.</label><br>
+        <br>
+        <input type="radio" name="lifestyleQ5" value="yes"> Yes
+        <input type="radio" name="lifestyleQ5" value="no"> No
+        <textarea name="hereditaryDetails" placeholder="Specify details if Yes"></textarea><br><br>
+
+        <h2>Nominee Details</h2>
+        <label for="firstName">First Name </span></label>
+        <input type="text" id="firstName" name="firstName" >
+
+        <label for="lastName">Last Name </span></label>
+        <input type="text" id="lastName" name="lastName" >
+
+        <label for="dob">Date of Birth </span></label>
+        <input type="date" id="dob" name="dob" >
+
+        <label for="relationship">Relationship with the Borrower </span></label>
+        <select id="relationship" name="relationship" >
+            <option value="" disabled selected>Select your relationship</option>
+            <option value="son">Son</option>
+            <option value="daughter">Daughter</option>
+            <option value="father">Father</option>
+            <option value="mother">Mother</option>
+            <option value="self">Self</option>
+            <option value="spouse">Spouse</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
