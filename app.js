@@ -4,7 +4,7 @@ const app = express();
 var https = require('https');
 var http = require('http');
 const path = require("path")
-
+const cors = require("cors")
 const config = require("./utils/config.js");
 const router = require("./routes/route");
 
@@ -339,6 +339,7 @@ async function startUp(file) {
   app.listen(server.port, () => {
     logger.info(`This app is running on port number : ${server.port}`);
   });
+  app.use(cors())
   app.use(router);
 }
 
