@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <form action="/ondc-seller/form/marine/aadhar/submission_kyc" method="POST">
+  <form action="/mock/form/marine/aadhar/submission_kyc" method="POST">
     <form action="/action_page.php">
       <label for="adhrNo">Aadhaar Number </label>
       <input type="text" id="adhrNo" name="adhrNo" />

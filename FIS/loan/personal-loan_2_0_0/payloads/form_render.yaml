@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form action="/ondc-seller/form/old/render/submission" method="post">
+    <form action="/mock/form/old/render/submission" method="post">
        <label>This will redirected to different html page
 </label>
 
