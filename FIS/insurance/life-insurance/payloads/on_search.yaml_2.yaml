@@ -7,9 +7,9 @@ context:
       code: '*'
   version: 2.0.0
   action: on_search
-  bap_id: fis.test.bap.io
+  bap_id: '{{bap_id}}'
   bap_uri: '{{bap_uri}}'
-  bpp_id: fis.test.bpp.io
+  bpp_id: '{{bpp_id}}'
   bpp_uri: '{{bpp_uri}}'
   transaction_id: '{{transaction_id}}'
   message_id: '{{msg_id}}'
