@@ -821,9 +821,16 @@ life-insurance_4:
                       input:
                         value: "req_body.message.order.items.0.xinput.form_response.submission_id"
                   - "MEDICAL_CHECKUP_APPOINTMENT_FORM_ID_SUBMISSION_ID"
-  callback: "on_init"
-  uri:
-    $ref: ""
-  delay: 300
-  payload:
-    $ref: "./insurance/life-insurance/template/on_init.yaml_4.yaml"
+  callbacks:
+    - callback: "on_init"
+      uri:
+        $ref: ""
+      delay: 300
+      payload:
+        $ref: "./insurance/life-insurance/template/on_init.yaml_4.yaml"
+    - callback: "on_status"
+      uri:
+        $ref: ""
+      delay: 600
+      payload:
+        $ref: "./insurance/life-insurance/template/on_status_on_init4_unsolc.yaml"

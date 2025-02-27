@@ -1,4 +1,4 @@
-# form_url: https://fis-staging.ondc.org/mock/
-form_url: http://localhost:5501/
+form_url: https://fis-staging.ondc.org/mock/
+# form_url: http://localhost:5501/
 bpp_uri: https://fis-staging.ondc.org/ondc-seller/
 bpp_id: fis-staging.ondc.org/ondc-seller

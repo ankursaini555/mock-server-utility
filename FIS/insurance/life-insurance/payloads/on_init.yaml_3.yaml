@@ -124,7 +124,7 @@ message:
           form:
             id: MEDICAL_CHECKUP_APPOINTMENT_FORM_ID
             mime_type: application/html
-            url: "{{form_url}}form/life-insurance/medical-appt-booking"
+            url: "{{form_url}}form/life-insurance/medical-appt-booking?payload={{stringify}}"
             resubmit: true
             multiple_submissions: false
           required: true

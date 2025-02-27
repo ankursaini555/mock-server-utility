@@ -1,7 +1,7 @@
 default:
-  callback: "undefined"
+  callback: "on_status"
   uri:
     $ref: ""
   delay: 300
   payload:
-    $ref: "../payloads/ekyc-dtls-submission.yaml"
+    $ref: "../template/on_status_ekyc_unsolc_1.yaml"
