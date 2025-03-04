@@ -1,0 +1,283 @@
+context:
+  action: on_confirm
+  bap_id: '{{bap_id}}'
+  bap_uri: '{{bap_uri}}'
+  bpp_id: '{{bpp_id}}'
+  bpp_uri: '{{bpp_uri}}'
+  domain: '{{domain}}'
+  location:
+    country:
+      code: IND-1
+    city:
+      code: '*'
+  message_id: '{{msg_id}}'
+  timestamp: '{{timestamp}}'
+  transaction_id: '{{transaction_id}}'
+  ttl: PT24H
+  version: 2.0.0
+message:
+  order:
+    fulfillments:
+      - state:
+          descriptor:
+            code: GRANTED
+        customer:
+          contact:
+            email: joe.adam@abc.org
+            phone: +91-9999999999
+        id: F1
+        type: POLICY
+    items:
+      - add_ons:
+          - id: A1
+            descriptor:
+              code: NO_CLAIM_BONUS
+              name: No Claim Bonus
+            quantity:
+              selected:
+                count: 1
+            price:
+              value: '100'
+              currency: INR
+        descriptor:
+          name: ABC Individual Health Insurance Policy
+          short_desc: ABC Individual Health Insurance Class A with custom addon
+        id: CHILD_ITEM_ID_I1
+        parent_item_id: LIFE_INSURANCE_ITEM_ID
+        price:
+          currency: INR
+          value: '18300'
+        fulfillment_ids:
+          - F1
+        tags:
+          - descriptor:
+              name: General Information
+              code: GENERAL_INFO
+            list:
+              - descriptor:
+                  code: COVERAGE_AMOUNT
+                value: '10000000'
+              - descriptor:
+                  code: CO_PAYMENT
+                value: 'Yes'
+              - descriptor:
+                  code: ROOM_RENT_CAP
+                value: '25000'
+              - descriptor:
+                  code: RESTORATION_BENEFIT
+                value: 'No'
+              - descriptor:
+                  code: CLAIM_SETTLEMENT_RATIO
+                value: '0.8'
+              - descriptor:
+                  code: PRE_HOSPITALIZATION_COVERAGE_DAYS
+                value: '2'
+              - descriptor:
+                  code: POST_HOSPITALIZATION_COVERAGE_DAYS
+                value: '5'
+              - descriptor:
+                  code: MATERNITY_COVERAGE
+                value: 'Yes'
+              - descriptor:
+                  code: INITIAL_WAITING_PERIOD
+                value: 'No'
+              - descriptor:
+                  code: CASHLESS_HOSPITALS
+                value: '50'
+              - descriptor:
+                  code: ROOM_CATEGORY
+                value: Deluxe
+              - descriptor:
+                  code: PROPOSAL_ID
+                value: PROPOSAL_ID
+        time:
+          duration: P1Y
+          label: TENURE
+    id: POLICY_ID
+    payments:
+      - collected_by: BPP
+        params:
+          amount: '2000'
+          currency: INR
+          transaction_id: 97ca91e3-3bd1-4bbf-a066-4db2a6070b6e
+        status: PAID
+        type: PRE-ORDER
+      - collected_by: BPP
+        params:
+          amount: '18000'
+          currency: INR
+          transaction_id: 20ca91e3-3bd1-4bbf-a066-4db2a6070b6e
+        status: PAID
+        type: PRE-ORDER
+    provider:
+      descriptor:
+        long_desc: >-
+          ABC Insurance Ltd. Deals in multiple Insurance Services like Health,
+          Motor, Marine etc
+        name: ABC Insurance Ltd.
+        short_desc: 'ABC Insurance Ltd. India '
+        images:
+          - url: >-
+              https://www.abcinsurance.com/content/dam/abc/india/assets/images/header/logo.png
+            size_type: xs
+      id: P1
+      tags:
+        - descriptor:
+            code: CONTACT_INFO
+            name: Contact Info
+          list:
+            - descriptor:
+                code: GRO_NAME
+                name: Gro name
+              value: ICICI
+            - descriptor:
+                code: GRO_EMAIL
+                name: Gro email
+              value: lifeline@iciciprulife.com
+            - descriptor:
+                code: GRO_CONTACT_NUMBER
+                name: Gro contact number
+              value: 1860 266 7766
+            - descriptor:
+                code: CUSTOMER_SUPPORT_LINK
+                name: Customer support link
+              value: >-
+                https://buy.iciciprulife.com/buy/GrievanceRedStep.htm?execution=e1s1
+            - descriptor:
+                code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                name: Customer support contact number
+              value: 1800 1080
+            - descriptor:
+                code: CUSTOMER_SUPPORT_EMAIL
+                name: Customer support email
+              value: customer.care@icicibank.com
+        - descriptor:
+            code: LSP_INFO
+            name: Lsp Info
+          list:
+            - descriptor:
+                code: LSP_NAME
+                name: Lsp name
+              value: ICICI_LSP
+            - descriptor:
+                code: LSP_EMAIL
+                name: Lsp email
+              value: lsp@iciciprulife.com
+            - descriptor:
+                code: LSP_CONTACT_NUMBER
+                name: Lsp contact number
+              value: 1860 266 7766
+            - descriptor:
+                code: LSP_ADDRESS
+                name: Lsp Address
+              value: >-
+                One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound
+                841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
+    quote:
+      id: OFFER_ID/PROPOSAL_ID
+      breakup:
+        - price:
+            value: '18300'
+            currency: INR
+          title: BASE_PRICE
+        - price:
+            value: '-500'
+            currency: INR
+          title: OFFER
+        - price:
+            value: '50'
+            currency: INR
+          title: CONVIENCE_FEE
+        - price:
+            value: '40'
+            currency: INR
+          title: TAX
+        - price:
+            value: '10'
+            currency: INR
+          title: PROCESSING_FEE
+        - title: ADD_ONS
+          item:
+            id: CHILD_ITEM_ID_I1
+            add_ons:
+              - id: A1
+          price:
+            value: '100'
+            currency: INR
+      price:
+        currency: INR
+        value: '18000'
+      ttl: PT15D
+    status: ACTIVE
+    documents:
+      - descriptor:
+          code: POLICY_DOC
+          name: Insurance Policy Document
+          short_desc: Download your digitally signed policy document here
+          long_desc: >-
+            Download you digitally signed policy document here. This document is
+            password protected. To open this document, please type in your
+            password in DDMMMYYYYXXXX format where DDMMMYYYY represents your
+            date of birth, and XXXX represents the first four letters of your
+            name
+        mime_type: application/pdf
+        url: https://abcinsurance.com/policies/O1.pdf
+      - descriptor:
+          code: CLAIM_DOC
+          name: Claim Insurance Policy
+          short_desc: Buyer can claim their insurance by visiting the below url
+          long_desc: Buyer can claim their insurance by visiting the below url
+        mime_type: application/html
+        url: https://abcinsurance.com/claim-policy/
+      - descriptor:
+          code: RENEW_DOC
+          name: Renew Insurance Policy
+          short_desc: Buyer can renew their insurance by visiting the below url
+          long_desc: >-
+            Buyer can easily renew their insurance policies by visiting the
+            following URL
+        mime_type: application/html
+        url: https://abcinsurance.com/renew-policy/
+    tags:
+      - descriptor:
+          code: BAP_TERMS
+          name: BAP Terms of Engagement
+        display: false
+        list:
+          - descriptor:
+              code: BUYER_FINDER_FEES_PERCENTAGE
+            value: '1'
+          - descriptor:
+              code: BUYER_FINDER_FEES_TYPE
+            value: percent
+          - descriptor:
+              code: STATIC_TERMS
+            value: https://api.example-bap.com/booking/terms
+          - descriptor:
+              code: SETTLEMENT_WINDOW
+            value: P30D
+          - descriptor:
+              code: DELAY_INTEREST
+            value: '2.5'
+          - descriptor:
+              code: OFFLINE_CONTRACT
+            value: 'true'
+      - display: false
+        descriptor:
+          name: BPP Terms of Engagement
+          code: BPP_TERMS
+        list:
+          - descriptor:
+              name: Static Terms (Transaction Level)
+              code: STATIC_TERMS
+            value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+          - descriptor:
+              name: Offline Contract
+              code: OFFLINE_CONTRACT
+            value: 'true'
+    created_at: '2023-07-24T05:41:32.487Z'
+    updated_at: '2023-07-24T05:41:32.487Z'
+    cancellation_terms:
+      - external_ref:
+          mimetype: text/html,
+          url: https://'{{bpp_id}}'/cancellation-terms
