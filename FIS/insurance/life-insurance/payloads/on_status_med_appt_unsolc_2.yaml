@@ -114,7 +114,7 @@ message:
           id: MEDICAL_CHECKUP_APPOINTMENT_FORM_ID
         form_response:
           status: SUCCESS
-          submission_id: '05888843-bbe4-47c1-92d5-8e146e8f01e4'
+          submission_id: 'MEDICAL_CHECKUP_APPOINTMENT_FORM_ID_SUBMISSION_ID'
       add_ons:
       - id: A1
         quantity:

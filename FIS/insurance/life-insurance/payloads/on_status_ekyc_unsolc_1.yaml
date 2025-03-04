@@ -114,7 +114,7 @@ message:
           id: EKYC_FORM_ID
         form_response:
           status: SUCCESS
-          submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+          submission_id: EKYC_FORM_ID_SUBMISSION_ID
         required: true
       add_ons:
       - id: A1
