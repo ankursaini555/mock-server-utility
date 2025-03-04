@@ -378,3 +378,11 @@ path:
   form_life-insurance_submission_medical-appt-booking:
     callbacks:
       $ref: ./FIS/insurance/life-insurance/forms/form_submission_medical-appt-booking.yaml
+
+#nomedforms-life-insurance
+  form_life-insurance_nomed_ekyc-dtls:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/nomed/form_ekyc-dtls.yaml
+  form_life-insurance_nomed_submission_ekyc-dtls:
+    callbacks:
+      $ref: ./FIS/insurance/life-insurance/forms/nomed/form_submission_ekyc-dtls.yaml
