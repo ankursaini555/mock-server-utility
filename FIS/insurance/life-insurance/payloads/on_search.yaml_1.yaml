@@ -75,6 +75,43 @@ message:
                 price:
                   value: '100'
                   currency: INR
+          - id: LIFE_INSURANCE_ITEM_ID_NO_MEDICAL_CHECKUP
+            descriptor:
+              code: LIFE_INSURANCE
+              name: Life  Insurance
+            category_ids:
+              - C1
+            matched: true
+            recommended: true
+            xinput:
+              head:
+                descriptor:
+                  name: BASIC_DETAILS
+                index:
+                  min: 0
+                  cur: 0
+                  max: 0
+                headings:
+                  - BASIC_DETAILS
+              form:
+                id: <var:basic_details_form>
+                mime_type: text/html
+                url: https://fis.test.bpp.io/xinput/form/basic_details
+                resubmit: false
+                multiple_submissions: false
+              required: true
+            add_ons:
+              - id: A1
+                quantity:
+                  available:
+                    count: 1
+                descriptor:
+                  name: No Claim Bonus
+                  code: NO_CLAIM_BONUS
+                price:
+                  value: '100'
+                  currency: INR
+        
         tags:
           - descriptor:
               code: CONTACT_INFO

@@ -234,6 +234,186 @@ message:
                 price:
                   value: '100'
                   currency: INR
+          - id: LIFE_INSURANCE_ITEM_ID_NO_MEDICAL_CHECKUP
+            descriptor:
+              code: LIFE_INSURANCE
+              name: Life  Insurance
+            category_ids:
+              - C1
+            matched: true
+            recommended: true
+            tags:
+              - descriptor:
+                  code: CHECKLIST
+                  name: Check List
+                list:
+                  - descriptor:
+                      code: BENEFICIARY_KYC
+                      name: Kyc of the life to be insured
+                    value: PENDING
+                  - descriptor:
+                      code: PROPOSER_KYC
+                      name: Kyc of the proposer
+                    value: PENDING
+                  - descriptor:
+                      code: FINAL_PAYMENT
+                      name: Final payment
+                    value: PENDING
+              - descriptor:
+                  code: GENERAL_INFO
+                  name: General Information
+                list:
+                  - descriptor:
+                      code: COVERAGE_AMOUNT
+                      name: coverage amount
+                      short_desc: up to/minimum coverage amount
+                    value: '5000000'
+                  - descriptor:
+                      code: CLAIM_SETTLEMENT_RATIO
+                      name: claim settlement ratio
+                      short_desc: up to/minimum claim settlement ratio
+                    value: '88'
+                  - descriptor:
+                      code: FREE_LOOKUP_PERIOD
+                      name: free lookup period
+                      short_desc: up to/minimum free lookup period
+                    value: P30D
+                  - descriptor:
+                      code: COVERAGE_PERIOD
+                      name: coverage period
+                      short_desc: age up to which policy is covered
+                    value: '70'
+                  - descriptor:
+                      code: PAYMENT_FREQUENCY
+                      name: payment frequency
+                      short_desc: up to/minimum payment frequency
+                    value: MONTHLY
+                  - descriptor:
+                      code: PAYMENT_OPTION
+                      name: Payment Option
+                      short_desc: payment type
+                    value: REGULAR_PREMIUM
+                  - descriptor:
+                      code: CLAIM_SETTLEMENT_TAT
+                      name: claim settlement tat
+                      short_desc: up to/minimum claim settlement tat
+                    value: P45D
+            add_ons:
+              - id: A1
+                quantity:
+                  available:
+                    count: 1
+                descriptor:
+                  name: No Claim Bonus
+                  code: NO_CLAIM_BONUS
+                price:
+                  value: '100'
+                  currency: INR
+          - id: CHILD_ITEM_ID_I1_NO_MEDICAL_CHECKUP
+            parent_item_id: LIFE_INSURANCE_ITEM_ID_NO_MEDICAL_CHECKUP
+            descriptor:
+              code: LIFE_INSURANCE
+              name: Life  Insurance
+            category_ids:
+              - C1
+            matched: true
+            recommended: true
+            price:
+              currency: INR
+              value: '18300'
+            tags:
+              - descriptor:
+                  code: CHECKLIST
+                  name: Check List
+                list:
+                  - descriptor:
+                      code: BENEFICIARY_KYC
+                      name: Kyc of the life to be insured
+                    value: PENDING
+                  - descriptor:
+                      code: PROPOSER_KYC
+                      name: Kyc of the proposer
+                    value: PENDING
+                  - descriptor:
+                      code: FINAL_PAYMENT
+                      name: Final payment
+                    value: PENDING
+              - descriptor:
+                  code: GENERAL_INFO
+                  name: General Information
+                list:
+                  - descriptor:
+                      code: COVERAGE_AMOUNT
+                      name: coverage amount
+                      short_desc: up to/minimum coverage amount
+                    value: '5000000'
+                  - descriptor:
+                      code: CLAIM_SETTLEMENT_RATIO
+                      name: claim settlement ratio
+                      short_desc: up to/minimum claim settlement ratio
+                    value: '88'
+                  - descriptor:
+                      code: FREE_LOOKUP_PERIOD
+                      name: free lookup period
+                      short_desc: up to/minimum free lookup period
+                    value: P30D
+                  - descriptor:
+                      code: COVERAGE_PERIOD
+                      name: coverage period
+                      short_desc: age up to which policy is covered
+                    value: '70'
+                  - descriptor:
+                      code: PAYMENT_FREQUENCY
+                      name: payment frequency
+                      short_desc: up to/minimum payment frequency
+                    value: MONTHLY
+                  - descriptor:
+                      code: PAYMENT_OPTION
+                      name: Payment Option
+                      short_desc: payment type
+                    value: REGULAR_PREMIUM
+                  - descriptor:
+                      code: CLAIM_SETTLEMENT_TAT
+                      name: claim settlement tat
+                      short_desc: up to/minimum claim settlement tat
+                    value: P45D
+                  - descriptor:
+                      code: BASE_PRICE
+                      name: Base Price
+                      short_desc: Base Price
+                    value: '18300'
+                  - descriptor:
+                      code: CONVIENCE_FEE
+                      name: Convience Fee
+                      short_desc: Convience Fee
+                    value: '50'
+                  - descriptor:
+                      code: PROCESSING_FEE
+                      name: Processing Fee
+                      short_desc: Processing Fee
+                    value: '10'
+                  - descriptor:
+                      code: TAX
+                      name: Tax
+                      short_desc: Tax
+                    value: '40'
+                  - descriptor:
+                      code: OFFER_VALIDITY
+                      name: Offer validity
+                      short_desc: Describes the offer validity
+                    value: P15D
+            add_ons:
+              - id: A1
+                quantity:
+                  available:
+                    count: 1
+                descriptor:
+                  name: No Claim Bonus
+                  code: NO_CLAIM_BONUS
+                price:
+                  value: '100'
+                  currency: INR
+        
         tags:
           - descriptor:
               code: CONTACT_INFO

@@ -685,6 +685,16 @@ life-insurance-2:
                       input:
                         value: "req_body.message.intent.category.descriptor.code"
                   - "LIFE_INSURANCE"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.provider.items.0.id"
+                  - "LIFE_INSURANCE_ITEM_ID"
   callback: "on_search"
   uri:
     $ref: ""
@@ -725,4 +735,51 @@ life-insurance-3:
   delay: 300
   payload:
     $ref: "./insurance/life-insurance/template/on_search.yaml_3.yaml"      
+
+
+#medical checkup
+#life insurance
+life-insurance-2-NO-MEDICAL:
+  condition:
+      operation:
+        type: AND
+        input:
+          value:
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.items"
+                  - "undefined"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.category.descriptor.code"
+                  - "LIFE_INSURANCE"
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.intent.provider.items.0.id"
+                  - "LIFE_INSURANCE_ITEM_ID_NO_MEDICAL_CHECKUP"
+  callback: "on_search"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./insurance/life-insurance/template/template-nomedical/on_search.yaml_2.yaml"      
+
 
