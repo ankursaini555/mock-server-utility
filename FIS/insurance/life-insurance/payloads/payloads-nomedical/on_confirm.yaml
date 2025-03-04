@@ -42,8 +42,8 @@ message:
         descriptor:
           name: ABC Individual Health Insurance Policy
           short_desc: ABC Individual Health Insurance Class A with custom addon
-        id: CHILD_ITEM_ID_I1
-        parent_item_id: LIFE_INSURANCE_ITEM_ID
+        id: CHILD_ITEM_ID_I1_NO_MEDICAL_CHECKUP
+        parent_item_id: LIFE_INSURANCE_ITEM_ID_NO_MEDICAL_CHECKUP
         price:
           currency: INR
           value: '18300'

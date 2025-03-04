@@ -35,8 +35,8 @@ message:
       descriptor:
         name: Life Gain Plus Individual
         short_desc: ABC Individual Life Insurance Class A with custom addon
-      id: CHILD_ITEM_ID_I1
-      parent_item_id: LIFE_INSURANCE_ITEM_ID
+      id: CHILD_ITEM_ID_I1_NO_MEDICAL_CHECKUP
+      parent_item_id: "LIFE_INSURANCE_ITEM_ID_NO_MEDICAL_CHECKUP"
       price:
         currency: INR
         value: '18300'
@@ -54,12 +54,8 @@ message:
             name: Kyc of the proposer
           value: DONE
         - descriptor:
-            code: MEDICAL_CHECKUP
-            name: Offline Medical checkup
-          value: DONE
-        - descriptor:
             code: FINAL_PAYMENT
-            name: Final revised payment after medical checkup
+            name: Final payment
           value: PENDING
       - descriptor:
           code: GENERAL_INFO
@@ -74,7 +70,7 @@ message:
             code: CLAIM_SETTLEMENT_RATIO
             name: claim settlement ratio
             short_desc: up to/minimum claim settlement ratio
-          value: 88%
+          value: '88'
         - descriptor:
             code: FREE_LOOKUP_PERIOD
             name: free lookup period
@@ -94,13 +90,7 @@ message:
             code: PAYMENT_OPTION
             name: Payment Option
             short_desc: payment type
-          value: LIMITED_PREMIUM
-        - descriptor:
-            code: PAYMENT_PERIOD
-            name: Premium Payment Period
-            short_desc: No of years of premium payment
-            long_desc: Use this value if PAYMENT_OPTION is LIMITED_PREMIUM
-          value: '7'
+          value: REGULAR_PREMIUM
         - descriptor:
             code: CLAIM_SETTLEMENT_TAT
             name: claim settlement tat
@@ -205,7 +195,7 @@ message:
         title: PROCESSING_FEE
       - title: ADD_ONS
         item:
-          id: CHILD_ITEM_ID_I1
+          id: CHILD_ITEM_ID_I1_NO_MEDICAL_CHECKUP
           add_ons:
           - id: A1
         price:
@@ -216,18 +206,12 @@ message:
         value: '18000'
       ttl: PT15D
     payments:
-    - collected_by: BPP
-      params:
-        amount: '2000'
-        currency: INR
-        transaction_id: 97ca91e3-3bd1-4bbf-a066-4db2a6070b6e
-      status: PAID
-      type: PRE-ORDER
-    - collected_by: BPP
+    - id: "<var:payment_id>"
+      collected_by: BPP
       params:
         amount: '18000'
         currency: INR
-        transaction_id: 20ca91e3-3bd1-4bbf-a066-4db2a6070b6e
+        transaction_id: 97ca91e3-3bd1-4bbf-a066-4db2a6070b6e
       status: PAID
       type: PRE-ORDER
     tags:

@@ -35,7 +35,7 @@
             }
 
             try {
-                const response = await fetch("/mock/form/life-insurance/submission/ekyc-dtls", {
+                const response = await fetch("/mock/form/life-insurance/nomed/submission/ekyc-dtls", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data),

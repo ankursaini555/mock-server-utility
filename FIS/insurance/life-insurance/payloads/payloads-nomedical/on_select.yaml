@@ -187,7 +187,7 @@ message:
           title: PROCESSING_FEE
         - title: ADD_ONS
           item:
-            id: CHILD_ITEM_ID_I1
+            id: CHILD_ITEM_ID_I1_NO_MEDICAL_CHECKUP
             add_ons:
               - id: A1
           price:

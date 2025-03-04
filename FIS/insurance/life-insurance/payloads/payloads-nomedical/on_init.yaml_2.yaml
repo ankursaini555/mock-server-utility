@@ -113,7 +113,7 @@ message:
           form:
             id: ADDITIONAL_DETAILS_FORM_ID
             mime_type: text/html
-            url: https://fis.test.bpp.io/form/addtional_dtls
+            url: "{{form_url}}form/life-insurance/additional-dtls"
             resubmit: true
             multiple_submissions: false
           required: true

@@ -4,4 +4,4 @@ default:
     $ref: ""
   delay: 300
   payload:
-    $ref: "../payloads/medical-appt-booking.yaml"
+    $ref: "../../payloads/payloads-nomedical/medical-appt-booking.yaml"

@@ -113,7 +113,7 @@ message:
           form:
             id: EKYC_FORM_ID
             mime_type: application/html
-            url: https://fis.test.bpp.io/form/ekyc_dtls
+            url: "{{form_url}}form/life-insurance/nomed/ekyc-dtls?payload={{stringify}}"
             resubmit: true
             multiple_submissions: false
           required: true
