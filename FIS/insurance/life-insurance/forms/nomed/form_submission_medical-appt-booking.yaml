@@ -1,0 +1,7 @@
+default:
+  callback: "on_status"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "../template/on_status_med_appt_unsolc_2.yaml"
