@@ -928,7 +928,7 @@ life-insurance_4_nomed:
                       type: READ
                       input:
                         value: "req_body.message.order.items.0.xinput.form_response.submission_id"
-                  - "MEDICAL_CHECKUP_APPOINTMENT_FORM_ID_SUBMISSION_ID"
+                  - "ADDITIONAL_DETAILS_FORM_ID_SUBMISSION_ID"
   callbacks:
     - callback: "on_init"
       uri:
