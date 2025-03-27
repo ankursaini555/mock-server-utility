@@ -1,0 +1,197 @@
+context:
+  domain: '{{domain}}'
+  location:
+    city:
+      code: '*'
+    country:
+      code: IND
+  action: on_confirm
+  version: 2.0.0
+  bap_id: "{{bap_id}}"
+  bap_uri: '{{bap_uri}}'
+  bpp_id: "{{bpp_id}}"
+  bpp_uri: '{{bpp_uri}}'
+  transaction_id: '{{transaction_id}}'
+  message_id: '{{msg_id}}'
+  timestamp: '{{timestamp}}'
+
+message:
+  order:
+    id: O1
+    status: ACCEPTED
+    provider:
+      id: P1
+    items:
+    - id: GC1
+      price:
+        currency: INR
+        value: '1500'
+        offered_value: '1500'
+      quantity:
+        selected:
+          count: 3
+      fulfillment_ids:
+      - F1
+      - F2
+      - F3
+      tags:
+      - descriptor:
+          code: CUSTOMIZATION
+        list:
+        - descriptor:
+            code: ENABLED
+          value: 'TRUE'
+        - descriptor:
+            code: RECEIVER_NAME
+          value: Test name
+        - descriptor:
+            code: MESSAGE
+          value: Happy Birthday to you!!
+        - descriptor:
+            code: PREVIEW_IMAGE
+          value: https://giftcard.com/images/prev-image
+    fulfillments:
+    - id: F1
+      state:
+        descriptor:
+          code: COMPLETED
+      type: BPP_ONLINE_EMAIL_SMS
+      stops:
+      - contact:
+          phone: '9999888867'
+          email: receiver1@test.com
+        person:
+          name: Receiver Name 1
+    - id: F2
+      state:
+        descriptor:
+          code: COMPLETED
+      type: BPP_ONLINE_EMAIL_SMS
+      stops:
+      - contact:
+          phone: '9999888868'
+          email: receiver2@test.com
+        person:
+          name: Receiver Name 2
+    - id: F3
+      state:
+        descriptor:
+          code: PENDING
+      type: BPP_ONLINE_EMAIL_SMS
+      stops:
+      - contact:
+          phone: '9999888869'
+          email: receiver3@test.com
+        person:
+          name: Receiver Name 3
+    billing:
+      name: 'House #'
+      address: B005 Aspire Heights
+      city:
+        name: Bangalore
+        code: BAN
+      state:
+        name: Karnataka
+        code: KA
+      email: test@test.com
+      phone: '9999888877'
+    offers:
+    - id: DISCA300
+      item_ids:
+      - GC1
+    - id: FREEBIE123
+      item_ids:
+      - GC2
+      tags:
+      - descriptor:
+          code: BENEFIT
+        list:
+        - descriptor:
+            code: ITEM_ID
+          value: SAMPLE_GC
+        - descriptor:
+            code: ITEM_COUNT
+          value: '1'
+    quote:
+      price:
+        currency: INR
+        value: '4200'
+      breakup:
+      - item:
+          id: GC1
+          quantity:
+            selected:
+              count: 3
+          price:
+            currency: INR
+            value: '1500'
+            offered_value: '1500'
+        title: ITEM
+        price:
+          currency: INR
+          value: '4500'
+      - item:
+          id: GC1
+        title: TAX
+        price:
+          currency: INR
+          value: '0'
+      - item:
+          id: GC1
+        title: CONVENIENCE_FEE
+        price:
+          currency: INR
+          value: '0'
+      - item:
+          id: DISCA100
+        title: OFFER
+        price:
+          currency: INR
+          value: "-300"
+      ttl: P1D
+    payments:
+    - type: ON-ORDER
+      collected_by: BPP
+      url: https://sellerpaymentgateway.com/123456
+      id: PMTTXN1
+      params:
+        currency: INR
+        transaction_id: '1234567'
+        amount: '4200'
+      status: PAID
+      tags:
+      - descriptor:
+          code: BUYER_FINDER_FEES
+        list:
+        - descriptor:
+            code: BUYER_FINDER_FEES_PERCENTAGE
+          value: '3'
+      - descriptor:
+          code: SETTLEMENT_DETAILS
+        list:
+        - descriptor:
+            code: SETTLEMENT_COUNTERPARTY
+          value: BAP
+        - descriptor:
+            code: SETTLEMENT_TYPE
+          value: UPI
+        - descriptor:
+            code: VIRTUAL_ADDRESS
+          value: test@oksbi
+        - descriptor:
+            code: ACCOUNT_NO
+          value: xxxxxxxxx
+        - descriptor:
+            code: BENEFICIARY_NAME
+          value: Buyer’s Name
+        - descriptor:
+            code: BANK_NAME
+          value: ICICI Bank
+        - descriptor:
+            code: BRANCH_CODE
+          value: ICIC0001234
+        - descriptor:
+            code: BRANCH_NAME
+          value: ICICI Indiranagar
+    created_at: '2023-01-15T10:00:00.469Z'
+    updated_at: '2023-01-15T10:00:00.469Z'

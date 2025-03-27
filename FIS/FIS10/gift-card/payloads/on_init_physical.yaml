@@ -1,0 +1,163 @@
+context:
+  domain: '{{domain}}'
+  location:
+    city:
+      code: '*'
+    country:
+      code: IND
+  action: on_init
+  version: 2.0.0
+  bap_id: "{{bap_id}}"
+  bap_uri: '{{bap_uri}}'
+  bpp_id: "{{bpp_id}}"
+  bpp_uri: '{{bpp_uri}}'
+  transaction_id: '{{transaction_id}}'
+  message_id: '{{msg_id}}'
+  timestamp: '{{timestamp}}'
+message:
+  order:
+    provider:
+      id: P1
+      locations:
+      - id: L1
+        gps: 28.524596, 77.185577
+        descriptor:
+          name: Croma E-Gift
+          short_desc: Croma E-Gift Cards (Instant Vouchers)
+          images:
+          - url: https://sellerapp.com/ondc/images/location.png
+            size_type: md
+        address: Croma - Odeon CP, Ground Floor, Odeon Cine Complex,Cannaught Place
+    fulfillments:
+    - id: F1
+      type: BAP
+      stops:
+      - contact:
+          phone: '9999888867'
+          email: receiver1@test.com
+        person:
+          name: Receiver Name 1
+    - id: F2
+      type: BAP
+      stops:
+      - contact:
+          phone: '9999888868'
+          email: receiver2@test.com
+        person:
+          name: Receiver Name 2
+    - id: F3
+      type: BAP
+      stops:
+      - contact:
+          phone: '9999888869'
+          email: receiver3@test.com
+        person:
+          name: Receiver Name 3
+    items:
+    - id: GC1
+      price:
+        currency: INR
+        value: '1500'
+        offered_value: '1500'
+      location_ids:
+      - L1
+      quantity:
+        selected:
+          count: 3
+      fulfillment_ids:
+      - F1
+      - F2
+      - F3
+      tags:
+      - descriptor:
+          code: CUSTOMIZATION
+        list:
+        - descriptor:
+            code: ENABLED
+          value: 'TRUE'
+        - descriptor:
+            code: RECEIVER_NAME
+          value: Test name
+        - descriptor:
+            code: MESSAGE
+          value: Happy Birthday to you!!
+        - descriptor:
+            code: PREVIEW_IMAGE
+          value: https://giftcard.com/images/prev-image
+    billing:
+      name: 'House #'
+      address: B005 Aspire Heights
+      city:
+        name: Bangalore
+        code: BAN
+      state:
+        name: Karnataka
+        code: KA
+      email: test@test.com
+      phone: '9999888877'
+    offers:
+    - id: DISCA300
+      item_ids:
+      - GC1
+    - id: FREEBIE123
+      item_ids:
+      - GC2
+      tags:
+      - descriptor:
+          code: BENEFIT
+        list:
+        - descriptor:
+            code: ITEM_ID
+          value: SAMPLE_GC
+        - descriptor:
+            code: ITEM_COUNT
+          value: '1'
+    quote:
+      price:
+        currency: INR
+        value: '4200'
+      breakup:
+      - item:
+          id: GC1
+          quantity:
+            selected:
+              count: 3
+          price:
+            currency: INR
+            value: '1500'
+            offered_value: '1500'
+        title: ITEM
+        price:
+          currency: INR
+          value: '4500'
+      - item:
+          id: GC1
+        title: TAX
+        price:
+          currency: INR
+          value: '0'
+      - item:
+          id: GC1
+        title: CONVENIENCE_FEE
+        price:
+          currency: INR
+          value: '0'
+      - item:
+          id: DISCA100
+        title: OFFER
+        price:
+          currency: INR
+          value: "-300"
+      ttl: P1D
+    payments:
+    - type: ON-ORDER
+      collected_by: BPP
+      url: https://sellerpaymentgateway.com/123456
+      status: NOT-PAID
+      tags:
+      - descriptor:
+          code: BUYER_FINDER_FEES
+        list:
+        - descriptor:
+            code: BUYER_FINDER_FEES_PERCENTAGE
+          value: '3'

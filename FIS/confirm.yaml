@@ -282,3 +282,98 @@ life-insurance-nomed:
   delay: 300
   payload:
     $ref: "./insurance/life-insurance/template/template-nomedical/on_confirm.yaml"
+
+#v 2.0.0 gift card
+gift_card_seller:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.context.domain"
+                    - "ONDC:FIS10"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.fulfillments.0.type"
+                  - "BPP_ONLINE_EMAIL_SMS"
+callbacks:
+  - callback: "on_confirm"
+    uri: ""
+    delay: 300
+    payload:
+      $ref: "./FIS10/gift-card/template/on_confirm_seller.yaml"
+  - callback: "on_status"
+    uri: ""
+    delay: 500
+    payload:
+      $ref: "./FIS10/gift-card/template/on_status_seller.yaml"
+
+gift_card_buyer:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.context.domain"
+                    - "ONDC:FIS10"
+  callbacks:
+    - callback: "on_confirm"
+      uri: ""
+      delay: 300
+      payload:
+        $ref: "./FIS10/gift-card/template/on_confirm_buyer.yaml"
+    - callback: "on_status"
+      uri: ""
+      delay: 500
+      payload:
+        $ref: "./FIS10/gift-card/template/on_status_buyer.yaml"
+
+gift_card_physical:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.context.domain"
+                    - "ONDC:FIS10"
+  callbacks:
+    - callback: "on_confirm"
+      uri: ""
+      delay: 300
+      payload:
+        $ref: "./FIS10/gift-card/template/on_confirm_physical.yaml"
+    - callback: "on_status"
+      uri: ""
+      delay: 500
+      payload:
+        $ref: "./FIS10/gift-card/template/on_status_physical.yaml"

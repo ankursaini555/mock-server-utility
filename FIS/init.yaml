@@ -942,3 +942,84 @@ life-insurance_4_nomed:
       delay: 600
       payload:
         $ref: "./insurance/life-insurance/template/template-nomedical/on_status_on_init4_unsolc.yaml"
+
+
+#v 2.0.0 gift card
+gift_card_seller:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.context.domain"
+                    - "ONDC:FIS10"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.fulfillments.0.type"
+                  - "BPP_ONLINE_EMAIL_SMS"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./FIS10/gift-card/template/on_init_seller.yaml"
+
+gift_card_buyer:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.context.domain"
+                    - "ONDC:FIS10"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./FIS10/gift-card/template/on_select_buyer.yaml"
+
+gift_card_physical:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.context.domain"
+                    - "ONDC:FIS10"
+  callback: "on_init"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./FIS10/gift-card/template/on_init_physical.yaml"
