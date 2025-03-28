@@ -1002,7 +1002,7 @@ gift_card_buyer:
                   - operation:
                       type: READ
                       input:
-                        value: "req_body.message.order.fulfillments.stops"
+                        value: "req_body.message.order.fulfillments.0.stops"
                   - "undefined"
   callback: "on_init"
   uri:
