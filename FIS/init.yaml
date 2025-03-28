@@ -994,6 +994,16 @@ gift_card_buyer:
                         input:
                           value: "req_body.context.domain"
                     - "ONDC:FIS10"
+          - operation:
+              type: EQUAL
+              title: Check parent item ID
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.message.order.fulfillments.stops"
+                  - "undefined"
   callback: "on_init"
   uri:
     $ref: ""
