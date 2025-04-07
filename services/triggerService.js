@@ -38,7 +38,7 @@ const trigger = async(context, config, data,security) => {
         .post(`${uri}`, data,header)
         .then((response) => {
           logger.info(
-            `Triggered ${api} response at ${uri}${api}`
+            `Triggered ${api} response at ${uri}`
           );
         })
         .catch(function (error) {
