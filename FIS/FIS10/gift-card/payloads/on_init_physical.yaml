@@ -151,7 +151,7 @@ message:
       ttl: P1D
     payments:
     - type: ON-ORDER
-      collected_by: BPP
+      collected_by: BAP
       url: https://sellerpaymentgateway.com/123456
       status: NOT-PAID
       tags:
