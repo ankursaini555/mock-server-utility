@@ -101,7 +101,7 @@ message:
             code: TERM
             name: Loan Term
             short_desc: Loans Duration 5 months
-          value: PT5M
+          value: P5M
         - descriptor:
             code: INTEREST_RATE_TYPE
             name: Interest rate type
@@ -140,7 +140,7 @@ message:
             code: REPAYMENT_FREQUENCY
             name: Repayment Frequency
             short_desc: Repayment Frequency by borrower
-          value: PT1M
+          value: P1M
         - descriptor:
             code: NUMBER_OF_INSTALLMENTS
             name: Number of installments of repayment
@@ -157,7 +157,7 @@ message:
             name: cool off period
             short_desc: "Cooling off/look-up period during which borrower shall not
               be\tcharged any penalty"
-          value: PT30D
+          value: P30D
         - descriptor:
             code: INSTALLMENT_AMOUNT
             name: Installment amount
@@ -166,11 +166,15 @@ message:
         - descriptor:
             code: MINIMUM_DOWNPAYMENT
             name: Minimum Downpayment Required
-          value: 0 INR
+          value: 1000 INR
         - descriptor:
             code: SUBVENTION_RATE
             name: Subvention Rate
           value: 5 %
+        - descriptor:
+            code: SELLER_SUBVENTION_RATE
+            name: Subvention Rate
+          value: 2 %
         display: true
       - display: true
         descriptor:
@@ -245,4 +249,4 @@ message:
         price:
           value: '0'
           currency: INR
-      ttl: PT15D
+      ttl: P15D

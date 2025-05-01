@@ -23,50 +23,54 @@ default:
     <body>
 
       <form id="merchantForm">
+
+        <!-- Merchant Details -->
         <p>Merchant Details</p>
         <label for="pan">PAN</label>
-        <input type="text" id="pan" name="pan" />
+        <input type="text" id="pan" name="pan" optional />
 
         <label for="gst">GST</label>
-        <input type="text" id="gst" name="gst" />
+        <input type="text" id="gst" name="gst" optional />
 
         <p>Bank Account Details</p>
         <label for="bankAccountNumber">Bank Account Number</label>
-        <input type="text" id="bankAccountNumber" name="bankAccountNumber" />
+        <input type="text" id="bankAccountNumber" name="bankAccountNumber" optional />
         <label for="bankIfscNumber">IFSC Number</label>
-        <input type="text" id="bankIfscNumber" name="bankIfscNumber" />
+        <input type="text" id="bankIfscNumber" name="bankIfscNumber" optional />
         <label for="bankAccountHolderName">Account Holder Name</label>
-        <input type="text" id="bankAccountHolderName" name="bankAccountHolderName" />
+        <input type="text" id="bankAccountHolderName" name="bankAccountHolderName" optional />
 
+        <!-- Product Details -->
         <p>Product Details</p>
         <label for="productCategory">Product Category</label>
-        <input type="text" id="productCategory" name="productCategory" />
-      
+        <input type="text" id="productCategory" name="productCategory" optional />
+
         <label for="productBrand">Brand</label>
-        <input type="text" id="productBrand" name="productBrand" />
+        <input type="text" id="productBrand" name="productBrand" optional />
 
         <label for="productModel">Model</label>
-        <input type="text" id="productModel" name="productModel" />
+        <input type="text" id="productModel" name="productModel" optional />
 
         <label for="productSKUID">SKUID</label>
-        <input type="text" id="productSKUID" name="productSKUID" />
+        <input type="text" id="productSKUID" name="productSKUID" optional />
 
         <label for="productPrice">Price</label>
-        <input type="text" id="productPrice" name="productPrice" />
+        <input type="text" id="productPrice" name="productPrice" optional />
 
         <label for="productReturnPeriod">Return Window</label>
-        <input type="text" id="productReturnPeriod" name="productReturnPeriod" />
+        <input type="text" id="productReturnPeriod" name="productReturnPeriod" optional />
+
+        <label for="maxSellerSubvention">Max Seller Subvention (%)</label>
+        <input type="text" id="maxSellerSubvention" name="maxSellerSubvention" optional />
 
         <input type="hidden" id="formId" name="formId" value="FO1">
-
         <input type="submit" value="Submit">
       </form>
 
       <div id="successMessage">
         <h1>Submission Successful</h1>
         <p id="submissionIdDisplay"></p>
-        <p> Use this submission id to initiate next call</p>
-
+        <p>Use this submission id to initiate next call</p>
       </div>
 
       <script>
@@ -75,18 +79,19 @@ default:
         const submissionIdDisplay = document.getElementById('submissionIdDisplay');
 
         form.addEventListener('submit', function (event) {
-          event.preventDefault(); // Stop actual form submission
+          event.preventDefault(); // Prevent actual navigation
 
-          // Generate a fake Submission ID
-          const submissionId = `F01_SUBMISSION_ID`;
+          // Normally you'd make a POST request here and get real submission ID
+          // Simulating a submission ID here:
+          const submissionId = 'FO1_SUBMISSION_ID';
 
-          // Hide the form
+          // Hide form
           form.style.display = 'none';
 
-          // Show the success message
+          // Show success message
           successMessage.style.display = 'block';
 
-          // Display the Submission ID
+          // Display the generated or returned submission ID
           submissionIdDisplay.textContent = `Your Submission ID is: ${submissionId}`;
         });
       </script>
