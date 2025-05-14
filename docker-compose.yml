@@ -7,7 +7,25 @@ services:
       dockerfile: Dockerfile
     container_name: ${CONTAINER_NAME:-mock-server-utility}
     ports:
-      - "${PORT:-3000}:${PORT:-3000}"
+      - "${PORT:-3000}:${PORT:-5501}"
     env_file:
       - .env
     restart: always
+    networks:
+      - default
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger-tracing
+    ports:
+      - "16686:16686" # Jaeger UI
+      - "4317:4317" # OTLP gRPC receiver
+      - "4318:4318" # OTLP HTTP receiver
+      - "14268:14268" # Jaeger collector endpoint (HTTP)
+    restart: always
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
+    name: mock-server-utility-network

@@ -1,7 +1,7 @@
 server:
   type: BAP/BPP
   port: 5501
-  sync_mode: false
+  sync_mode: true
 security:
   verify_sign: false
   lookup_uri: https://staging.registry.ondc.org/lookup
@@ -380,7 +380,7 @@ path:
     callbacks:
       $ref: ./FIS/insurance/life-insurance/forms/form_submission_medical-appt-booking.yaml
 
-#nomedforms-life-insurance
+  #nomedforms-life-insurance
   form_life-insurance_nomed_ekyc-dtls:
     callbacks:
       $ref: ./FIS/insurance/life-insurance/forms/nomed/form_ekyc-dtls.yaml
@@ -388,7 +388,7 @@ path:
     callbacks:
       $ref: ./FIS/insurance/life-insurance/forms/nomed/form_submission_ekyc-dtls.yaml
 
-#purchase finance 2.2.0
+  #purchase finance 2.2.0
   form_merchant_product_purchase-finance:
     callbacks:
       $ref: ./FIS/loan/2.2.0/purchase-finance/forms/on_search_form_1.yaml
@@ -410,3 +410,46 @@ path:
   form_on-init-2_purchase-finance:
     callbacks:
       $ref: ./FIS/loan/2.2.0/purchase-finance/forms/on_init_form_2.yaml
+
+  # invoice based loans 2.1.0
+  form_entity_info_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_entity_info.yaml
+  form_update_loan_value_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_update_loan_value.yaml
+  form_individual_kyc_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_individual_kyc_redirect.yaml
+  form_entity_kyc_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_entity_kyc_redirect.yaml
+  form_account_details_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_account_details.yaml
+  form_e-mandate_redirect_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_e-mandate_redirect.yaml
+  form_loan_agreement_invoice-based-loans:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_loan_agreement_redirect.yaml
+# running outside the container and tracing it in the jaeger container
+# tracing:
+#   enabled: true
+#   jaeger:
+#     endpoint: http://localhost:4318/v1/traces
+#     service_name: fis-service
