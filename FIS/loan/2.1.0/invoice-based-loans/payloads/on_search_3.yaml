@@ -13,8 +13,8 @@ context:
   message_id: '{{message_id}}'
   ttl: PT30M
   timestamp: '{{timestamp}}'
-  bpp_id: bpp.credit.becknprotocol.org
-  bpp_uri: https://bpp.credit.becknprotocol.org
+  bpp_id: '{{bpp_id}}'
+  bpp_uri: '{{bpp_uri}}'
 message:
   catalog:
     descriptor:
