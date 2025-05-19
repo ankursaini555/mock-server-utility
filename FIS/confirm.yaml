@@ -483,3 +483,28 @@ invoice-based-loans_on_confirm-2.1.0-1:
       delay: 500
       payload:
         $ref: "./loan/2.1.0/invoice-based-loans/template/on_update_1.yaml"
+
+
+unreserved-entry-pass:
+  condition:
+    operation:
+      type: AND
+      input:
+        value:
+          - operation:
+              type: EQUAL
+              title: Check search message code
+              input:
+                value:
+                  - operation:
+                      type: READ
+                      input:
+                        value: "req_body.context.domain"
+                  - "ONDC:TRV14"
+
+  callback: "on_confirm"
+  uri:
+    $ref: ""
+  delay: 300
+  payload:
+    $ref: "./unreserved-entry-pass/template/on_confirm.yaml"

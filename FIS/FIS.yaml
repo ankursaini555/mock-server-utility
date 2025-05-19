@@ -412,41 +412,49 @@ path:
       $ref: ./FIS/loan/2.2.0/purchase-finance/forms/on_init_form_2.yaml
 
   # invoice based loans 2.1.0
-  form_entity_info_invoice-based-loans:
+  form_entity-info_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_entity_info.yaml
-  form_update_loan_value_invoice-based-loans:
+  form_update-loan-value_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_update_loan_value.yaml
-  form_individual_kyc_invoice-based-loans:
+  form_individual-kyc_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_individual_kyc_redirect.yaml
-  form_entity_kyc_invoice-based-loans:
+  form_entity-kyc_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_entity_kyc_redirect.yaml
-  form_account_details_invoice-based-loans:
+  form_account-details_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_account_details.yaml
-  form_e-mandate_redirect_invoice-based-loans:
+  form_e-mandate-redirect_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_e-mandate_redirect.yaml
-  form_loan_agreement_invoice-based-loans:
+  form_loan-agreement_invoice-based-loans:
     schema:
       type: object
     callbacks:
       $ref: ./FIS/loan/2.1.0/invoice-based-loans/forms/form_loan_agreement_redirect.yaml
+
+  # unreversed entry pass
+  form_unreversed-entry-pass_additional-details:
+    schema:
+      type: object
+    callbacks:
+      $ref: ./FIS/unreserved-entry-pass/forms/form_additional_details.yaml
+      
 # running outside the container and tracing it in the jaeger container
 # tracing:
 #   enabled: true
